@@ -19,3 +19,6 @@ struct Brewery: Codable {
     let latitude: String?
     let websiteUrl: URL?
 }
+
+
+

@@ -7,16 +7,6 @@
 
 import UIKit
 
-enum Link {
-    case brewery
-    
-    var url: URL {
-        switch self {
-        case .brewery:
-            return URL(string: "https://api.openbrewerydb.org/breweries")!
-        }
-    }
-}
 
 final class MainViewController: UIViewController {
 
@@ -26,7 +16,7 @@ final class MainViewController: UIViewController {
     }
 
     @IBAction func fetchData() {
-        fetchBrewery()
+//        fetchBrewery()
     }
 }
 
@@ -43,7 +33,7 @@ extension MainViewController {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let brewery = try decoder.decode([Brewery].self, from: data)
-                print(brewery)
+//                print(brewery)
 
             } catch {
                 print(error.localizedDescription)
