@@ -13,7 +13,7 @@
 		1A0C94312A0672E5000C0F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0C94302A0672E5000C0F59 /* Assets.xcassets */; };
 		1A0C94342A0672E5000C0F59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0C94322A0672E5000C0F59 /* LaunchScreen.storyboard */; };
 		1A0C94402A0674AE000C0F59 /* Brewery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C943F2A0674AE000C0F59 /* Brewery.swift */; };
-		1A9982762A078F90001CB1F8 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9982752A078F90001CB1F8 /* NavigationViewController.swift */; };
+		1A7540B12A10FE74007655B0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1A7540B02A10FE74007655B0 /* Alamofire */; };
 		1A9982782A078FB3001CB1F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9982772A078FB3001CB1F8 /* TableViewController.swift */; };
 		1A99827A2A078FE2001CB1F8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9982792A078FE2001CB1F8 /* DetailViewController.swift */; };
 		1AAB160B2A0A617700DBB9A6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB160A2A0A617700DBB9A6 /* NetworkManager.swift */; };
@@ -29,7 +29,6 @@
 		1A0C94332A0672E5000C0F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A0C94352A0672E5000C0F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A0C943F2A0674AE000C0F59 /* Brewery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brewery.swift; sourceTree = "<group>"; };
-		1A9982752A078F90001CB1F8 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		1A9982772A078FB3001CB1F8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		1A9982792A078FE2001CB1F8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1AAB160A2A0A617700DBB9A6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7540B12A10FE74007655B0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,6 @@
 		1A0C943E2A067389000C0F59 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1A9982752A078F90001CB1F8 /* NavigationViewController.swift */,
 				1A9982772A078FB3001CB1F8 /* TableViewController.swift */,
 				1ABE4A482A0D388B005ACD72 /* MapViewController.swift */,
 				1A9982792A078FE2001CB1F8 /* DetailViewController.swift */,
@@ -146,6 +145,9 @@
 			dependencies = (
 			);
 			name = OpenBrewery;
+			packageProductDependencies = (
+				1A7540B02A10FE74007655B0 /* Alamofire */,
+			);
 			productName = OpenBrewery;
 			productReference = 1A0C94242A0672E4000C0F59 /* OpenBrewery.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +176,9 @@
 				Base,
 			);
 			mainGroup = 1A0C941B2A0672E4000C0F59;
+			packageReferences = (
+				1A7540AF2A10FE74007655B0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1A0C94252A0672E4000C0F59 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -205,7 +210,6 @@
 				1A0C94402A0674AE000C0F59 /* Brewery.swift in Sources */,
 				1A9982782A078FB3001CB1F8 /* TableViewController.swift in Sources */,
 				1A0C94282A0672E4000C0F59 /* AppDelegate.swift in Sources */,
-				1A9982762A078F90001CB1F8 /* NavigationViewController.swift in Sources */,
 				1A0C942A2A0672E4000C0F59 /* SceneDelegate.swift in Sources */,
 				1A99827A2A078FE2001CB1F8 /* DetailViewController.swift in Sources */,
 				1ABE4A492A0D388B005ACD72 /* MapViewController.swift in Sources */,
@@ -434,6 +438,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A7540AF2A10FE74007655B0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A7540B02A10FE74007655B0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A7540AF2A10FE74007655B0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A0C941C2A0672E4000C0F59 /* Project object */;
 }

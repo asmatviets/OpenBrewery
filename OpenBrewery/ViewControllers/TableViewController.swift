@@ -15,7 +15,7 @@ final class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+//        view.backgroundColor = .gray
         fetchBreweries()
         title = "Choose you brewery"
         }
@@ -33,8 +33,6 @@ final class TableViewController: UITableViewController {
 
     }
 
-
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,21 +65,34 @@ final class TableViewController: UITableViewController {
 }
     // MARK: - Networking
     extension TableViewController {
-
+        
         private func fetchBreweries() {
-            networkManager.fetch([Brewery].self, from: Link.brewery.url) { [weak self] result in
+            networkManager.fetchBreweries(from: Link.brewery.url) { [weak self] result in
                 switch result {
                 case .success(let breweries):
                     self?.breweries = breweries
-                    
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                    }
+                    self?.tableView.reloadData()
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
                 }
             }
         }
+
+// method for Generic func from NetworkManager
+//        private func fetchBreweries() {
+//            networkManager.fetch([Brewery].self, from: Link.brewery.url) { [weak self] result in
+//                switch result {
+//                case .success(let breweries):
+//                    self?.breweries = breweries
+//
+//                    DispatchQueue.main.async {
+//                        self?.tableView.reloadData()
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//        }
     }
     
     /*
