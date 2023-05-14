@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -52,7 +53,14 @@
                             <outlet property="delegate" destination="oGT-9J-Ngf" id="6dq-MN-cIG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="gpk-nH-SUJ"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="gpk-nH-SUJ">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="0aA-5T-GmS">
+                            <imageReference key="image" image="map" catalog="system" symbolScale="medium"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="mapViewSegue" id="fhj-sU-Rp4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XI-gu-6jH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,52 +171,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yY-sU-1oE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377.86259541984731" y="30.985915492957748"/>
+            <point key="canvasLocation" x="378" y="524"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="OpenBrewery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="OpenBrewery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PB-aP-ssg">
-                                <rect key="frame" x="132" y="408.66666666666669" width="129.33333333333337" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="FetchBrewery">
-                                    <color key="baseForegroundColor" systemColor="linkColor"/>
-                                    <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VT-6r-lta">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
                                 <connections>
-                                    <action selector="fetchData" destination="BYZ-38-t0r" eventType="touchUpInside" id="37C-vp-ho0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vx8-FJ-Bkz"/>
                                 </connections>
-                            </button>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8PB-aP-ssg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rf9-6Q-edP"/>
-                            <constraint firstItem="8PB-aP-ssg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W8b-ti-TjS"/>
+                            <constraint firstItem="7VT-6r-lta" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Lmu-xJ-oZV"/>
+                            <constraint firstItem="7VT-6r-lta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hHh-ig-3dx"/>
+                            <constraint firstItem="7VT-6r-lta" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="sXE-d0-IRr"/>
+                            <constraint firstItem="7VT-6r-lta" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wsS-18-hQr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jKM-4J-Trz"/>
+                    <connections>
+                        <outlet property="mapView" destination="7VT-6r-lta" id="qzf-6J-c4L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240" y="75"/>
+            <point key="canvasLocation" x="377.86259541984731" y="-217.60563380281693"/>
         </scene>
     </scenes>
     <resources>
+        <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

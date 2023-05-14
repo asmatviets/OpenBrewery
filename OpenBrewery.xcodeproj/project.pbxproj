@@ -17,6 +17,7 @@
 		1A9982782A078FB3001CB1F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9982772A078FB3001CB1F8 /* TableViewController.swift */; };
 		1A99827A2A078FE2001CB1F8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9982792A078FE2001CB1F8 /* DetailViewController.swift */; };
 		1AAB160B2A0A617700DBB9A6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB160A2A0A617700DBB9A6 /* NetworkManager.swift */; };
+		1ABE4A492A0D388B005ACD72 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE4A482A0D388B005ACD72 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1A9982772A078FB3001CB1F8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		1A9982792A078FE2001CB1F8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1AAB160A2A0A617700DBB9A6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1ABE4A482A0D388B005ACD72 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				1A9982752A078F90001CB1F8 /* NavigationViewController.swift */,
 				1A9982772A078FB3001CB1F8 /* TableViewController.swift */,
+				1ABE4A482A0D388B005ACD72 /* MapViewController.swift */,
 				1A9982792A078FE2001CB1F8 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
@@ -205,6 +208,7 @@
 				1A9982762A078F90001CB1F8 /* NavigationViewController.swift in Sources */,
 				1A0C942A2A0672E4000C0F59 /* SceneDelegate.swift in Sources */,
 				1A99827A2A078FE2001CB1F8 /* DetailViewController.swift in Sources */,
+				1ABE4A492A0D388B005ACD72 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

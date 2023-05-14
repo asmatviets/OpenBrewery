@@ -25,7 +25,15 @@ final class TableViewController: UITableViewController {
             guard let detailVC = segue.destination as? DetailViewController else { return }
             detailVC.brewery = breweries[indexPath.row]
         }
+        
+        if (segue.identifier == "mapViewSegue") {
+            guard let mapVC = segue.destination as? MapViewController else { return }
+            mapVC.breweries = breweries
+        }
+
     }
+
+
     
     // MARK: - Table view data source
     
