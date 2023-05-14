@@ -15,7 +15,7 @@ final class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .gray
+        view.backgroundColor = UIColor(red: 245 / 255, green: 235 / 255, blue: 224 / 255, alpha: 1)
         fetchBreweries()
         title = "Choose you brewery"
         }
@@ -44,17 +44,18 @@ final class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.rowHeight = 70
         let cell = tableView.dequeueReusableCell(withIdentifier: "breweryCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         let brewery = breweries[indexPath.row]
         
         content.image = UIImage(named: brewery.stateProvince)
-        content.imageProperties.maximumSize.height = 30
-        content.imageProperties.maximumSize.width = 40
+        content.imageProperties.maximumSize.height = 70
+        content.imageProperties.maximumSize.width = 90
         content.imageProperties.cornerRadius = 10
         content.text = brewery.name
         content.textProperties.color = .black
-        content.textProperties.font = .boldSystemFont(ofSize: 12)
+        content.textProperties.font = .boldSystemFont(ofSize: 14)
         
         content.secondaryText = brewery.city + ", " + brewery.stateProvince
         content.textToSecondaryTextVerticalPadding = 5

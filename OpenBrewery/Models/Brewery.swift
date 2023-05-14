@@ -17,9 +17,10 @@ struct Brewery: Codable {
     let country: String
     let longitude: String?
     let latitude: String?
+    let phone: String?
     let websiteUrl: String?
     
-    init(id: String, name: String, breweryType: String, address1: String?, city: String, stateProvince: String, postalCode: String, country: String, longitude: String?, latitude: String?, websiteUrl: String?) {
+    init(id: String, name: String, breweryType: String, address1: String?, city: String, stateProvince: String, postalCode: String, country: String, longitude: String?, latitude: String?, phone: String?, websiteUrl: String?) {
         self.id = id
         self.name = name
         self.breweryType = breweryType
@@ -30,6 +31,7 @@ struct Brewery: Codable {
         self.country = country
         self.longitude = longitude
         self.latitude = latitude
+        self.phone = phone
         self.websiteUrl = websiteUrl
     }
     
@@ -44,6 +46,7 @@ struct Brewery: Codable {
         country = breweryData["country"] as? String ?? ""
         longitude = breweryData["longitude"] as? String ?? ""
         latitude = breweryData["latitude"] as? String ?? ""
+        phone = breweryData["phone"] as? String ?? ""
         websiteUrl = breweryData["website_url"] as? String ?? ""
     }
     

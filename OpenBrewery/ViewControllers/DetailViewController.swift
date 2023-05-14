@@ -13,13 +13,24 @@ final class DetailViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var flagOfProvince: UIImageView!
     @IBOutlet var breweryDetails: UILabel!
-    @IBOutlet var webLink: UITextView!
+    @IBOutlet weak var goToWebSiteButton: UIButton!
     @IBOutlet var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 245 / 255, green: 235 / 255, blue: 224 / 255, alpha: 1)
+        flagOfProvince.backgroundColor = .clear
         setUpLabels()
         showOnMap()
+        hideButton()
+    }
+    
+    @IBAction func goToWebsite() {
+        if brewery.websiteUrl != nil {
+            guard let urlFromString = brewery.websiteUrl else { return }
+            guard let urlToOpen = URL(string: urlFromString) else { return }
+            UIApplication.shared.open(urlToOpen)
+        }
     }
 }
 
@@ -35,6 +46,7 @@ Name: \(brewery.name)
 Size: \(brewery.breweryType)
 Province, city: \(brewery.stateProvince), \(brewery.city),
 Adress: \(brewery.address1 ?? "no data")
+Phone: \(brewery.phone ?? "no data")
 """
     }
     
@@ -49,6 +61,13 @@ Adress: \(brewery.address1 ?? "no data")
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 300, longitudinalMeters: 300)
         mapView.setRegion(region, animated: true)
+    }
+    
+    private func hideButton() {
+        guard let noNilValueURL = brewery.websiteUrl else { return }
+        if noNilValueURL == "" {
+            goToWebSiteButton.isHidden = true
+        }
     }
 }
     
